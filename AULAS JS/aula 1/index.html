@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>RealizarOperaçãoMatematica</title>
+</head>
+<body>
+    <header>
+        <h1>Realizar a operação Matematica</h1>
+    </header>
+    <main>
+        <div id="container">
+            <fieldset class="separador">
+                <legend>Escolha a Operação desejada</legend>
+                <label for="operacao">Operação</label>
+                <select name="operacao" id="operacao">
+                    <option value="somar">Somar</option>
+                    <option value="subtrair">Subtrair</option>
+                    <option value="multiplicar">Multiplicar</option>
+                    <option value="dividir">Dividir</option>
+                </select>
+            </fieldset>
+
+            <label for="primeiroNumero">Informe o primeiro número</label>
+            <input type="number" name="primeiroNumero" id="primeiroNumero">
+            <label for="segundoNumero">Informe o segundo número</label>
+            <input type="number" name="segundoNumero" id="segundoNumero">
+
+            <button type="button" id="calcular">Calcular</button>
+            <button type="button" id="limpar">Limpar</button>
+            
+            <fieldset id="resposta">
+                <legend>Resultado da Operação</legend>
+                <output id="resultado"></output>
+            </fieldset>
+
+        </div>        
+    </main>
+    
+    <footer>Rodapé</footer>
+        <script src="./assets/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/styles.css">
+        <link rel="shortcut icon" href="./assets/icone/brainstorming_7803282.png" type="image/x-icon">
+        <title>Calculadora</title>
+    </head>
+    <body>
+        <header>
+            <h1>Realizar calculos matematicos</h1>
+        </header>
+        <main>
+            <div id="container">
+                <fieldset>
+                    <legend>Escolha a opção!!</legend>
+                    <label for="operacao">Operação</label>
+                    <select name="operacao" id="operacao">  
+                        <option value="somar">Somar</option>
+                        <option value="subtrair">Subtrair</option>
+                        <option value="multiplicar">Multiplicar</option>
+                    </select>
+                </fieldset>
+                <label for="number1">Informa o primeiro número</label>
+                <input type="number" name="number1" id="number1">
+                <label for="number2">Informa o segundo número</label>
+                <input type="number" name="number2" id="number2">
+                <label for="number3">Informa o terceiro número</label>
+                <input type="number" name="number3" id="number3">
+
+                <button type="button" id="calcular">Calcular</button>
+                <button type="button" id="limpar">Limpar</button>
+                <fieldset id="resposta">
+                    <legend>Resultado da Operação</legend>
+                    <output id="resultado"></output>
+                </fieldset>
+            </div>
+
+        </main>
+        <footer>Rodapé</footer>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

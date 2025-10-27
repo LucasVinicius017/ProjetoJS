@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/styles.css">
+
+        <title>Calculadora</title>
+    </head>
+    <body>
+        <main class="container-principal">
+            <section class="calculadora">
+                <header>
+                    <h1>Calculadora Didática</h1>
+                    <p>Insira dois números e escolha uma operação.</p>
+                </header>
+
+                <form id="formulario-calculadora" onsubmit="return false;">
+                    <div class="grupo-input">
+                        <label for="numero1">Primeiro número</label>
+                        <input type="number" id="numero1" placeholder="Digite o 1º valor" required autofocus>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="numero2">Segundo número</label>
+                        <input type="number" id="numero2" placeholder="Digite o 2º valor" required>
+                    </div>
+
+                    <div class="grupo-operacoes">
+                        <button data-operacao="+" title="Somar">+</button>
+                        <button data-operacao="-" title="Subtrair">-</button>
+                        <button data-operacao="*" title="Multiplicar">×</button>
+                        <button data-operacao="/" title="Dividir">÷</button>
+                        <button data-operacao="C" title="Limpar">C</button>
+                    </div>
+                </form>
+
+            </section>
+            <div class="container-resultado">
+                <p id="texto-resultado">O resultado aparecerá aqui.</p>
+            </div>
+        </main>
+        
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

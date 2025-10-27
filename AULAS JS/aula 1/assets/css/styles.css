@@ -1,0 +1,99 @@
+input[type=number]::-webkit-inner-spin-button
+input[type=number]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* input[type=number]
+{
+    -moz-appearance: textfield;
+} */
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;    
+}input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body
+{
+    height: 100vh;
+    width: 100vw;
+}
+
+header
+{
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+   
+}
+
+main
+{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#container
+{
+    display: flex;
+    flex-direction: column;     
+}
+
+#container label
+{
+    font-weight: bold;
+}
+
+#container input
+{
+    margin-bottom: 20px;
+}
+
+/* #operacao
+{
+    width: 20px;
+} */
+
+.separador
+{
+    margin-bottom: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+    width: 220px;
+}
+
+#operacao
+{
+    margin-bottom: 20px;
+}
+
+#primeiroNumero, #segundoNumero
+{
+    width: 200px;
+}
+
+footer
+{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+

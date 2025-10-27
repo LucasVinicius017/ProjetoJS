@@ -1,0 +1,204 @@
+/* 1. Reset e Definições Globais */
+:root
+{
+    /* Paleta de cores atrativa e suave */
+    --cor-fundo: #f0f2f5;
+    --cor-container: #ffffff;
+    --cor-texto-principal: #333a56;
+    --cor-texto-secundario: #5a6e8b;
+    --cor-primaria: #4a72ff;
+    --cor-primaria-hover: #3a5bcc;
+    --cor-sombra: rgba(74, 114, 255, 0.15);
+    --cor-sucesso: #28a745;
+    --cor-erro: #dc3545;
+    --cor-borda: #d1d9e6;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 2. Estilos do Corpo e Layout Principal */
+body
+{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container-principal
+{
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 3. Estilos da Calculadora (Card Principal) */
+.calculadora
+{
+    background-color: var(--cor-container);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px var(--cor-sombra);
+    animation: surgir 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.calculadora header
+{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.calculadora h1
+{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.calculadora p
+{
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* 4. Estilos dos Inputs e Labels */
+.grupo-input
+{
+    margin-bottom: 20px;
+}
+
+.grupo-input label
+{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+}
+
+.grupo-input input
+{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.grupo-input input:focus
+{
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(74, 114, 255, 0.2);
+}
+
+/* Remove os botões de seta (spin buttons) do input tipo number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]
+{
+    -moz-appearance: textfield;
+}
+
+/* 5. Estilos dos Botões de Operação */
+.grupo-operacoes
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.grupo-operacoes button
+{
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-primaria);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.grupo-operacoes button:hover
+{
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-3px);
+}
+
+.grupo-operacoes button:active
+{
+    transform: translateY(-1px);
+}
+
+/* 6. Estilos da Área de Resultado */
+.container-resultado
+{
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#texto-resultado
+{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+    animation: fadeInResultado 0.5s ease both;
+}
+
+#texto-resultado.sucesso
+{
+    color: var(--cor-sucesso);
+}
+
+#texto-resultado.erro
+{
+    color: var(--cor-erro);
+}
+
+/* 7. Animações */
+@keyframes surgir
+{
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInResultado
+{
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
