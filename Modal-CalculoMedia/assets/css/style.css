@@ -7,12 +7,18 @@
   --cor-texto: #2d3436;
   --cor-branca: #ffffff;
 }
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
  
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--cor-fundo);
-  margin: 0;
-  padding: 0;
+
 }
  
 .container {
