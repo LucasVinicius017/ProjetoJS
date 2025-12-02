@@ -23,8 +23,7 @@ function gerarATabuada ()
         const linha = document.createElement("p");
         linha.textContent = `${numero} x ${contador} = ${numero * contador}`;
 
-        resultado.appendChild(linha);
-        
+        resultado.appendChild(linha);       
     }
 }
 
