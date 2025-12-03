@@ -16,4 +16,30 @@ function salvarResultado(resultado)
     const historico = JSON.parse(localStorage.getItem('historico')) || [];
     historico.push(resultado);
     localStorage.setItem('historico', JSON.stringify(historico));
+}                                      
+
+function exibirModal(resultado)
+{
+    const modal = document.getElementById('modal');
+    const conteudo = document.getElementById('resultado');
+    conteudo.innerHTML = `
+    <h2>Resultado<h2/>
+    <p><strong>Aluno:</strong> ${resultado.nome}</p>
+    <p><strong>Disciplina:</strong> ${resultado.disciplina}</p>
+    <p><strong>Notas:</strong> ${resultado.notas.join(',')}</p>
+    <p><strong>Média:</strong> ${resultado.media}</p>
+    <p id="resultadoM" > <strong>Status:</strong> ${resultado.status}</p>
+    `;
+    modal.style.display = "block";
+    const resultadoM = document.getElementById('resultadoM');
+    resultadoM.classList.remove('aprovado');
+    resultadoM.classList.remove('reprovado');
+    if (resultado.status == 'Aprovado')
+    {
+        resultadoM.classList.add('aprovado')
+    }
+    else
+    {
+        resultado.classList.add('reprovado')
+    }
 }
