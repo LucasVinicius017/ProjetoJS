@@ -121,3 +121,47 @@ function exibirHistorico(filtro = '')
 
   secao.style.display = 'block';
 }
+
+// Função para limpar histórico
+function limparHistorico() {
+  localStorage.removeItem('historico');
+  document.getElementById('historico').style.display = 'none';
+}
+
+// Eventos
+document.getElementById('formulario-notas').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nome = document.getElementById('nome').value;
+  const disciplina = document.getElementById('disciplina').value;
+  const notas = [
+    parseFloat(document.getElementById('nota1').value),
+    parseFloat(document.getElementById('nota2').value),
+    parseFloat(document.getElementById('nota3').value),
+    parseFloat(document.getElementById('nota4').value)
+  ];
+
+  const resultado = calcularMedia(notas);
+  const dados = { nome, disciplina, notas, ...resultado };
+  salvarResultado(dados);
+  exibirModal(dados);
+});
+
+// Fechar modal
+document.querySelector('.fechar').addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'none';
+});
+
+// Botão ver histórico completo
+document.getElementById('ver-historico').addEventListener('click', () => {
+  exibirHistorico();
+});
+
+// Botão limpar histórico
+document.getElementById('limpar-historico').addEventListener('click', limparHistorico);
+
+// Botão filtrar histórico por nome
+document.getElementById('filtrar-historico').addEventListener('click', () => {
+  const nomeFiltro = document.getElementById('filtro-nome').value.trim();
+  exibirHistorico(nomeFiltro);
+});
