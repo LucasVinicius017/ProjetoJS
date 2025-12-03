@@ -42,4 +42,5 @@ function exibirModal(resultado)
     {
         resultado.classList.add('reprovado')
     }
+    gerarGrafico(resultado.notas);
 }
