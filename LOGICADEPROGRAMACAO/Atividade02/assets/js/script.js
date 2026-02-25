@@ -1,5 +1,3 @@
-const { createContext } = require("react");
-
 const nomeJs = document.getElementById("Nome");
 const salarioJs = document.getElementById("Salario");
 const totalvendasJs = document.getElementById("TotalVendas");
